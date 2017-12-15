@@ -4,11 +4,11 @@ Example ROS catkin package that utilizes the OpenPose library from https://githu
 
 ## System
 Tested on:
-* Ubuntu 14.04.5 
-* ROS Indigo
+* Ubuntu 16.04
+* ROS Kinetic
 * CUDA 8.0
-* cuDNN 5.1
-* OpenCV 3.3
+* cuDNN 6
+* OpenCV 3.2.0
 
 ## Installation Steps
 
@@ -49,3 +49,13 @@ Tested on:
 source catkin_workspace/devel/setup.bash
 rosrun openpose_ros openpose_ros_node
 ```
+
+
+### Using with the ZED camera.
+
+Modify the image_topic line in src/gflags_options.cpp to the image_topic you want to process.
+```bash
+DEFINE_string(camera_topic,   "/camera/rgb/image_rect_color",   "Image topic that OpenPose will process.");
+```
+   
+   Other options [here](http://wiki.ros.org/zed-ros-wrapper)
